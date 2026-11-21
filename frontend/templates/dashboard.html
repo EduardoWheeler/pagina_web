@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Artistas - Explorar Proyectos</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 1000px; padding: 30px 20px;">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid #334155; padding-bottom: 15px;">
+            <h1 style="font-size: 24px; margin: 0; color: #38bdf8;">Explorar Proyectos</h1>
+            <div id="user-session-info" style="display: flex; align-items: center; gap: 15px;">
+                <span id="user-display-name" style="font-size: 14px; color: #cbd5e1; font-weight: 500;"></span>
+                <button id="btn-open-upload-modal" class="btn" style="background-color: #22c55e; color: #0f172a; padding: 6px 12px; font-size: 13px;">+ Subir Proyecto</button>
+                <a href="/profile" class="btn" style="padding: 6px 12px; font-size: 13px; text-decoration: none;">Mi Perfil</a>
+                <button id="btn-logout" class="btn" style="background-color: #ef4444; color: white; padding: 6px 12px; font-size: 13px;">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <section class="form-container" style="margin-bottom: 30px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div class="input-group">
+                    <label for="filter-search">Buscar</label>
+                    <input type="text" id="filter-search" placeholder="Título o descripción...">
+                </div>
+                <div class="input-group">
+                    <label for="filter-type">Tipo de Publicación</label>
+                    <input type="text" id="filter-type" placeholder="obra, libro, etc.">
+                </div>
+                <div class="input-group">
+                    <label for="filter-genre">Categoría / Género</label>
+                    <input type="text" id="filter-genre" placeholder="DIY, Electronica, etc.">
+                </div>
+                <div style="display: flex; align-items: flex-end;">
+                    <button id="btn-apply-filters" class="btn" style="width: 100%;">Filtrar</button>
+                </div>
+            </div>
+        </section>
+
+        <main id="posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></main>
+
+        <footer style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 40px;">
+            <button id="btn-prev-page" class="btn" style="background-color: #334155; color: white;" disabled>Anterior</button>
+            <span id="page-indicator" style="font-size: 14px; color: #cbd5e1;">Página 1</span>
+            <button id="btn-next-page" class="btn" style="background-color: #334155; color: white;">Siguiente</button>
+        </footer>
+    </div>
+
+    <!-- Modal de Vista de Detalle del Proyecto -->
+    <div id="detail-modal" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="form-container" style="max-width: 650px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative;">
+            <button id="btn-close-modal" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #94a3b8; font-size: 24px; cursor: pointer;">&times;</button>
+            <div id="modal-cover-container" style="width: 100%; height: 220px; display: none; margin-bottom: 20px; border-radius: 8px; overflow: hidden; background-color: #0f172a;">
+                <img id="modal-cover" src="" alt="Portada del proyecto" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h2 id="modal-title" style="color: #38bdf8; margin-top: 0;"></h2>
+            <p id="modal-type-genre" style="font-size: 12px; color: #94a3b8; font-weight: 600; text-transform: uppercase; margin-bottom: 15px;"></p>
+            <p id="modal-description" style="font-size: 14px; color: #cbd5e1; line-height: 1.6; white-space: pre-wrap;"></p>
+            
+            <div id="modal-gallery-container" style="display: none; margin-top: 20px;">
+                <h4 style="color: #cbd5e1; font-size: 14px; margin-bottom: 10px

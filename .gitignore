@@ -1,0 +1,32 @@
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# IDE / sistema operativo
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Herramientas locales (no forman parte del proyecto)
+exportar_a_word.py
+Codigo_Proyecto.docx
+*.docx
+
+# Archivos subidos por usuarios
+frontend/static/avatars/
+frontend/static/uploads/

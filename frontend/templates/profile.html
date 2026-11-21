@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Artistas - Editar Perfil</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="profile-form" class="form">
+                <h2>Completar Perfil de Artista</h2>
+                <p style="color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
+                    Personaliza tu espacio o utiliza la opción de omitir por ahora.
+                </p>
+                
+                <!-- 1. Avatar con Drag & Drop o Selección de archivo -->
+                <div class="input-group">
+                    <label>Avatar de Perfil</label>
+                    <div id="drop-zone" class="drop-zone">
+                        <input type="file" id="profile-avatar-file" accept="image/*" class="file-input">
+                        <div id="drop-zone-content" class="drop-zone-content">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p class="drop-text">Arrastra tu imagen aquí o <span class="browse-btn">busca en tus carpetas</span></p>
+                            <span class="file-hint">Formatos aceptados: JPG, PNG, WEBP, GIF</span>
+                        </div>
+                        <div id="avatar-preview-container" class="avatar-preview-container hidden">
+                            <img id="avatar-preview" src="" alt="Vista previa del avatar">
+                            <button type="button" id="btn-remove-avatar" class="btn-remove">&times;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Nombre -->
+                <div class="input-group">
+                    <label for="profile-name">Nombre</label>
+                    <input type="text" id="profile-name" required minlength="2" placeholder="Tu nombre o seudónimo">
+                </div>
+
+                <!-- 3. Redes -->
+                <div class="input-group">
+                    <label for="profile-redes">Redes Sociales</label>
+                    <input type="text" id="profile-redes" placeholder="Ej: Instagram, YouTube, etc.">
+                </div>
+
+                <!-- 4. Links -->
+                <div class="input-group">
+                    <label for="profile-links">Links / Portfolio</label>
+                    <input type="text" id="profile-links" placeholder="Enlace a tus trabajos o web personal">
+                </div>
+
+                <!-- Botones de acción -->
+                <button type="submit" class="btn">Guardar y Continuar</button>
+                <button type="button" id="btn-skip" class="btn" style="background-color: #334155; color: #f8fafc; margin-top: 8px;">Omitir por ahora (Skip)</button>
+                
+                <p id="profile-msg" class="error-msg" style="margin-top: 15px;"></p>
+            </form>
+        </div>
+    </div>
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>

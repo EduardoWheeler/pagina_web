@@ -1,0 +1,12 @@
+# Versiones mínimas. Para fijar las exactas que usas: pip freeze > requirements.txt
+fastapi>=0.115
+uvicorn[standard]>=0.30
+SQLAlchemy>=2.0
+PyMySQL>=1.1
+cryptography>=42
+pydantic[email]>=2.7
+pydantic-settings>=2.3
+bcrypt>=4.0
+python-jose[cryptography]>=3.3
+python-multipart>=0.0.9
+Jinja2>=3.1
